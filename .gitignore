@@ -1,0 +1,6 @@
+/log/*
+/tmp/*
+/config/*.key
+
+storage/development.sqlite3-shm
+storage/development.sqlite3-wal
