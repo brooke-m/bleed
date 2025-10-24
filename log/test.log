@@ -1,0 +1,438 @@
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "characters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "characters" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "abjuration" integer, "conjuration" integer, "created_at" datetime(6) NOT NULL, "divination" integer, "enchantment" integer, "evocation" integer, "illusion" integer, "name" varchar, "necromancy" integer, "party_id" integer, "total_casts" integer, "transmutation" integer, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_characters_on_party_id" ON "characters" ("party_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "parties"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "parties" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20251024171518)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20251024171433);[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2025-10-24 17:42:48.678959', '2025-10-24 17:42:48.678960') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '78e44b01ef70e5606576c04afb301e0233e59b23', '2025-10-24 17:42:48.679327', '2025-10-24 17:42:48.679328') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "characters";
+DELETE FROM "parties";
+INSERT INTO "characters" ("id", "abjuration", "conjuration", "created_at", "divination", "enchantment", "evocation", "illusion", "name", "necromancy", "party_id", "total_casts", "transmutation", "updated_at") VALUES (980190962, NULL, NULL, '2025-10-24 17:43:29.557509', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 17:43:29.557509'), (298486374, NULL, NULL, '2025-10-24 17:43:29.557509', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 17:43:29.557509');
+INSERT INTO "parties" ("id", "code", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-10-24 17:43:29.558564', '2025-10-24 17:43:29.558564'), (298486374, 'MyString', '2025-10-24 17:43:29.558564', '2025-10-24 17:43:29.558564')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------
+PartyTest: test_party_cannot_be_saved_without_a_code
+----------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "characters";
+DELETE FROM "parties";
+INSERT INTO "characters" ("id", "abjuration", "conjuration", "created_at", "divination", "enchantment", "evocation", "illusion", "name", "necromancy", "party_id", "total_casts", "transmutation", "updated_at") VALUES (980190962, NULL, NULL, '2025-10-24 17:45:17.892364', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 17:45:17.892364'), (298486374, NULL, NULL, '2025-10-24 17:45:17.892364', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 17:45:17.892364');
+INSERT INTO "parties" ("id", "code", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-10-24 17:45:17.893374', '2025-10-24 17:45:17.893374'), (298486374, 'MyString', '2025-10-24 17:45:17.893374', '2025-10-24 17:45:17.893374')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------
+PartyTest: test_party_cannot_be_saved_without_a_code
+----------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.0ms)[0m  [1m[31mDELETE FROM "characters";
+DELETE FROM "parties";
+INSERT INTO "characters" ("id", "abjuration", "conjuration", "created_at", "divination", "enchantment", "evocation", "illusion", "name", "necromancy", "party_id", "total_casts", "transmutation", "updated_at") VALUES (980190962, NULL, NULL, '2025-10-24 17:45:40.338561', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 17:45:40.338561'), (298486374, NULL, NULL, '2025-10-24 17:45:40.338561', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 17:45:40.338561');
+INSERT INTO "parties" ("id", "code", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-10-24 17:45:40.339771', '2025-10-24 17:45:40.339771'), (298486374, 'MyString', '2025-10-24 17:45:40.339771', '2025-10-24 17:45:40.339771')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------
+PartyTest: test_party_cannot_be_saved_without_a_code
+----------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.0ms)[0m  [1m[31mDELETE FROM "characters";
+DELETE FROM "parties";
+INSERT INTO "characters" ("id", "abjuration", "conjuration", "created_at", "divination", "enchantment", "evocation", "illusion", "name", "necromancy", "party_id", "total_casts", "transmutation", "updated_at") VALUES (980190962, NULL, NULL, '2025-10-24 17:45:57.635071', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 17:45:57.635071'), (298486374, NULL, NULL, '2025-10-24 17:45:57.635071', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 17:45:57.635071');
+INSERT INTO "parties" ("id", "code", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-10-24 17:45:57.636258', '2025-10-24 17:45:57.636258'), (298486374, 'MyString', '2025-10-24 17:45:57.636258', '2025-10-24 17:45:57.636258')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------
+PartyTest: test_party_cannot_be_saved_without_a_code
+----------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "characters";
+DELETE FROM "parties";
+INSERT INTO "characters" ("id", "abjuration", "conjuration", "created_at", "divination", "enchantment", "evocation", "illusion", "name", "necromancy", "party_id", "total_casts", "transmutation", "updated_at") VALUES (980190962, NULL, NULL, '2025-10-24 17:47:17.646900', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 17:47:17.646900'), (298486374, NULL, NULL, '2025-10-24 17:47:17.646900', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 17:47:17.646900');
+INSERT INTO "parties" ("id", "code", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-10-24 17:47:17.647933', '2025-10-24 17:47:17.647933'), (298486374, 'MyString', '2025-10-24 17:47:17.647933', '2025-10-24 17:47:17.647933')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------
+PartyTest: test_party_cannot_be_saved_without_a_code
+----------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "characters";
+DELETE FROM "parties";
+INSERT INTO "characters" ("id", "abjuration", "conjuration", "created_at", "divination", "enchantment", "evocation", "illusion", "name", "necromancy", "party_id", "total_casts", "transmutation", "updated_at") VALUES (980190962, NULL, NULL, '2025-10-24 17:47:49.533083', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 17:47:49.533083'), (298486374, NULL, NULL, '2025-10-24 17:47:49.533083', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 17:47:49.533083');
+INSERT INTO "parties" ("id", "code", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-10-24 17:47:49.534575', '2025-10-24 17:47:49.534575'), (298486374, 'MyString', '2025-10-24 17:47:49.534575', '2025-10-24 17:47:49.534575')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------
+PartyTest: test_party_codes_can_only_have_letters_and_numbers
+-------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "characters";
+DELETE FROM "parties";
+INSERT INTO "characters" ("id", "abjuration", "conjuration", "created_at", "divination", "enchantment", "evocation", "illusion", "name", "necromancy", "party_id", "total_casts", "transmutation", "updated_at") VALUES (980190962, NULL, NULL, '2025-10-24 17:49:13.701435', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 17:49:13.701435'), (298486374, NULL, NULL, '2025-10-24 17:49:13.701435', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 17:49:13.701435');
+INSERT INTO "parties" ("id", "code", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-10-24 17:49:13.702625', '2025-10-24 17:49:13.702625'), (298486374, 'MyString', '2025-10-24 17:49:13.702625', '2025-10-24 17:49:13.702625')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------
+PartyTest: test_party_codes_can_only_have_letters_and_numbers
+-------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------
+PartyTest: test_party_cannot_be_saved_without_a_code
+----------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "characters";
+DELETE FROM "parties";
+INSERT INTO "characters" ("id", "abjuration", "conjuration", "created_at", "divination", "enchantment", "evocation", "illusion", "name", "necromancy", "party_id", "total_casts", "transmutation", "updated_at") VALUES (980190962, NULL, NULL, '2025-10-24 17:55:48.877413', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 17:55:48.877413'), (298486374, NULL, NULL, '2025-10-24 17:55:48.877413', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 17:55:48.877413');
+INSERT INTO "parties" ("id", "code", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-10-24 17:55:48.878379', '2025-10-24 17:55:48.878379'), (298486374, 'MyString', '2025-10-24 17:55:48.878379', '2025-10-24 17:55:48.878379')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------
+PartyTest: test_party_codes_can_only_have_letters_and_numbers
+-------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------
+PartyTest: test_valid_party_creation
+------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mParty Create (0.2ms)[0m  [1m[32mINSERT INTO "parties" ("code", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["code", "party"], ["created_at", "2025-10-24 17:55:48.887166"], ["updated_at", "2025-10-24 17:55:48.887166"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------
+PartyTest: test_party_cannot_be_created_without_a_code
+------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.0ms)[0m  [1m[31mDELETE FROM "characters";
+DELETE FROM "parties";
+INSERT INTO "characters" ("id", "abjuration", "conjuration", "created_at", "divination", "enchantment", "evocation", "illusion", "name", "necromancy", "party_id", "total_casts", "transmutation", "updated_at") VALUES (980190962, NULL, NULL, '2025-10-24 17:57:06.686841', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 17:57:06.686841'), (298486374, NULL, NULL, '2025-10-24 17:57:06.686841', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 17:57:06.686841');
+INSERT INTO "parties" ("id", "code", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-10-24 17:57:06.687759', '2025-10-24 17:57:06.687759'), (298486374, 'MyString', '2025-10-24 17:57:06.687759', '2025-10-24 17:57:06.687759')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------
+PartyTest: test_party_codes_can_only_have_letters_and_numbers
+-------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "characters";
+DELETE FROM "parties";
+INSERT INTO "characters" ("id", "abjuration", "conjuration", "created_at", "divination", "enchantment", "evocation", "illusion", "name", "necromancy", "party_id", "total_casts", "transmutation", "updated_at") VALUES (980190962, NULL, NULL, '2025-10-24 17:59:05.967190', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 17:59:05.967190'), (298486374, NULL, NULL, '2025-10-24 17:59:05.967190', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 17:59:05.967190');
+INSERT INTO "parties" ("id", "code", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-10-24 17:59:05.968203', '2025-10-24 17:59:05.968203'), (298486374, 'MyString', '2025-10-24 17:59:05.968203', '2025-10-24 17:59:05.968203')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------
+CharacterTest: test_baseline_character_creation
+-----------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mParty Create (0.2ms)[0m  [1m[32mINSERT INTO "parties" ("code", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["code", "test0"], ["created_at", "2025-10-24 17:59:05.974548"], ["updated_at", "2025-10-24 17:59:05.974548"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "characters";
+DELETE FROM "parties";
+INSERT INTO "characters" ("id", "abjuration", "conjuration", "created_at", "divination", "enchantment", "evocation", "illusion", "name", "necromancy", "party_id", "total_casts", "transmutation", "updated_at") VALUES (980190962, NULL, NULL, '2025-10-24 17:59:18.050517', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 17:59:18.050517'), (298486374, NULL, NULL, '2025-10-24 17:59:18.050517', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 17:59:18.050517');
+INSERT INTO "parties" ("id", "code", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-10-24 17:59:18.051872', '2025-10-24 17:59:18.051872'), (298486374, 'MyString', '2025-10-24 17:59:18.051872', '2025-10-24 17:59:18.051872')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------
+CharacterTest: test_baseline_character_creation
+-----------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mParty Create (0.2ms)[0m  [1m[32mINSERT INTO "parties" ("code", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["code", "test0"], ["created_at", "2025-10-24 17:59:18.058553"], ["updated_at", "2025-10-24 17:59:18.058553"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "characters";
+DELETE FROM "parties";
+INSERT INTO "characters" ("id", "abjuration", "conjuration", "created_at", "divination", "enchantment", "evocation", "illusion", "name", "necromancy", "party_id", "total_casts", "transmutation", "updated_at") VALUES (980190962, NULL, NULL, '2025-10-24 18:01:41.439248', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 18:01:41.439248'), (298486374, NULL, NULL, '2025-10-24 18:01:41.439248', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 18:01:41.439248');
+INSERT INTO "parties" ("id", "code", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-10-24 18:01:41.440585', '2025-10-24 18:01:41.440585'), (298486374, 'MyString', '2025-10-24 18:01:41.440585', '2025-10-24 18:01:41.440585')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------
+CharacterTest: test_character_that_belongs_to_a_party
+-----------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mParty Create (0.4ms)[0m  [1m[32mINSERT INTO "parties" ("code", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["code", "test0"], ["created_at", "2025-10-24 18:01:41.445503"], ["updated_at", "2025-10-24 18:01:41.445503"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "characters";
+DELETE FROM "parties";
+INSERT INTO "characters" ("id", "abjuration", "conjuration", "created_at", "divination", "enchantment", "evocation", "illusion", "name", "necromancy", "party_id", "total_casts", "transmutation", "updated_at") VALUES (980190962, NULL, NULL, '2025-10-24 18:01:44.603234', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 18:01:44.603234'), (298486374, NULL, NULL, '2025-10-24 18:01:44.603234', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 18:01:44.603234');
+INSERT INTO "parties" ("id", "code", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-10-24 18:01:44.615932', '2025-10-24 18:01:44.615932'), (298486374, 'MyString', '2025-10-24 18:01:44.615932', '2025-10-24 18:01:44.615932')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------
+CharacterTest: test_character_that_belongs_to_a_party
+-----------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mParty Create (0.3ms)[0m  [1m[32mINSERT INTO "parties" ("code", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["code", "test0"], ["created_at", "2025-10-24 18:01:44.631742"], ["updated_at", "2025-10-24 18:01:44.631742"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------
+CharacterTest: test_baseline_character_creation
+-----------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "characters";
+DELETE FROM "parties";
+INSERT INTO "characters" ("id", "abjuration", "conjuration", "created_at", "divination", "enchantment", "evocation", "illusion", "name", "necromancy", "party_id", "total_casts", "transmutation", "updated_at") VALUES (980190962, NULL, NULL, '2025-10-24 18:02:38.858167', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 18:02:38.858167'), (298486374, NULL, NULL, '2025-10-24 18:02:38.858167', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 18:02:38.858167');
+INSERT INTO "parties" ("id", "code", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-10-24 18:02:38.859297', '2025-10-24 18:02:38.859297'), (298486374, 'MyString', '2025-10-24 18:02:38.859297', '2025-10-24 18:02:38.859297')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------
+CharacterTest: test_character_that_belongs_to_a_party
+-----------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mParty Create (0.5ms)[0m  [1m[32mINSERT INTO "parties" ("code", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["code", "test0"], ["created_at", "2025-10-24 18:02:38.866138"], ["updated_at", "2025-10-24 18:02:38.866138"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 980190963], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "characters";
+DELETE FROM "parties";
+INSERT INTO "characters" ("id", "abjuration", "conjuration", "created_at", "divination", "enchantment", "evocation", "illusion", "name", "necromancy", "party_id", "total_casts", "transmutation", "updated_at") VALUES (980190962, NULL, NULL, '2025-10-24 18:02:51.206832', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 18:02:51.206832'), (298486374, NULL, NULL, '2025-10-24 18:02:51.206832', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 18:02:51.206832');
+INSERT INTO "parties" ("id", "code", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-10-24 18:02:51.207859', '2025-10-24 18:02:51.207859'), (298486374, 'MyString', '2025-10-24 18:02:51.207859', '2025-10-24 18:02:51.207859')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------
+CharacterTest: test_character_that_belongs_to_a_party
+-----------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mParty Create (0.2ms)[0m  [1m[32mINSERT INTO "parties" ("code", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["code", "test0"], ["created_at", "2025-10-24 18:02:51.214360"], ["updated_at", "2025-10-24 18:02:51.214360"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 980190963], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.0ms)[0m  [1m[31mDELETE FROM "characters";
+DELETE FROM "parties";
+INSERT INTO "characters" ("id", "abjuration", "conjuration", "created_at", "divination", "enchantment", "evocation", "illusion", "name", "necromancy", "party_id", "total_casts", "transmutation", "updated_at") VALUES (980190962, NULL, NULL, '2025-10-24 18:03:18.317809', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 18:03:18.317809'), (298486374, NULL, NULL, '2025-10-24 18:03:18.317809', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 18:03:18.317809');
+INSERT INTO "parties" ("id", "code", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-10-24 18:03:18.318719', '2025-10-24 18:03:18.318719'), (298486374, 'MyString', '2025-10-24 18:03:18.318719', '2025-10-24 18:03:18.318719')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------
+CharacterTest: test_character_that_belongs_to_a_party
+-----------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mParty Create (0.2ms)[0m  [1m[32mINSERT INTO "parties" ("code", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["code", "test0"], ["created_at", "2025-10-24 18:03:18.324589"], ["updated_at", "2025-10-24 18:03:18.324589"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 980190963], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "characters";
+DELETE FROM "parties";
+INSERT INTO "characters" ("id", "abjuration", "conjuration", "created_at", "divination", "enchantment", "evocation", "illusion", "name", "necromancy", "party_id", "total_casts", "transmutation", "updated_at") VALUES (980190962, NULL, NULL, '2025-10-24 18:03:29.807087', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 18:03:29.807087'), (298486374, NULL, NULL, '2025-10-24 18:03:29.807087', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 18:03:29.807087');
+INSERT INTO "parties" ("id", "code", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-10-24 18:03:29.808044', '2025-10-24 18:03:29.808044'), (298486374, 'MyString', '2025-10-24 18:03:29.808044', '2025-10-24 18:03:29.808044')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------
+CharacterTest: test_character_that_belongs_to_a_party
+-----------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mParty Create (0.4ms)[0m  [1m[32mINSERT INTO "parties" ("code", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["code", "test0"], ["created_at", "2025-10-24 18:03:29.815060"], ["updated_at", "2025-10-24 18:03:29.815060"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 980190963], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."party_id" = ? ORDER BY "characters"."id" ASC LIMIT ?[0m  [["party_id", 980190963], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "characters";
+DELETE FROM "parties";
+INSERT INTO "characters" ("id", "abjuration", "conjuration", "created_at", "divination", "enchantment", "evocation", "illusion", "name", "necromancy", "party_id", "total_casts", "transmutation", "updated_at") VALUES (980190962, NULL, NULL, '2025-10-24 18:03:50.405964', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 18:03:50.405964'), (298486374, NULL, NULL, '2025-10-24 18:03:50.405964', NULL, NULL, NULL, NULL, 'MyString', NULL, NULL, NULL, NULL, '2025-10-24 18:03:50.405964');
+INSERT INTO "parties" ("id", "code", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-10-24 18:03:50.406867', '2025-10-24 18:03:50.406867'), (298486374, 'MyString', '2025-10-24 18:03:50.406867', '2025-10-24 18:03:50.406867')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------
+CharacterTest: test_character_that_belongs_to_a_party
+-----------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mParty Create (0.2ms)[0m  [1m[32mINSERT INTO "parties" ("code", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["code", "test0"], ["created_at", "2025-10-24 18:03:50.413540"], ["updated_at", "2025-10-24 18:03:50.413540"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mParty Load (0.4ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 980190963], ["LIMIT", 1]]
+  [1m[36mCharacter Create (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("abjuration", "conjuration", "created_at", "divination", "enchantment", "evocation", "illusion", "name", "necromancy", "party_id", "total_casts", "transmutation", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["abjuration", nil], ["conjuration", nil], ["created_at", "2025-10-24 18:03:50.431545"], ["divination", nil], ["enchantment", nil], ["evocation", nil], ["illusion", nil], ["name", "little beepo"], ["necromancy", nil], ["party_id", 980190963], ["total_casts", nil], ["transmutation", nil], ["updated_at", "2025-10-24 18:03:50.431545"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."party_id" = ? ORDER BY "characters"."id" ASC LIMIT ?[0m  [["party_id", 980190963], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m

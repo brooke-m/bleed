@@ -1,3 +1,29 @@
   [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='Bleed'*/[0m
   [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Bleed'*/[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Bleed'*/[0m
+Started GET "/" for 127.0.0.1 at 2025-10-24 18:10:48 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Bleed'*/[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/brooke/.asdf/installs/ruby/3.4.6/lib/ruby/gems/3.4.0/gems/railties-8.1.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/brooke/.asdf/installs/ruby/3.4.6/lib/ruby/gems/3.4.0/gems/railties-8.1.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 2.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Bleed'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-10-24 17:19:31.186404', '2025-10-24 17:19:31.186406') RETURNING "key" /*application='Bleed'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Bleed'*/[0m
+Migrating to CreateCharacters (20251024171433)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Bleed'*/[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "characters" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "total_casts" integer, "abjuration" integer, "conjuration" integer, "divination" integer, "enchantment" integer, "evocation" integer, "illusion" integer, "necromancy" integer, "transmutation" integer, "party_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Bleed'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_characters_on_party_id" ON "characters" ("party_id") /*application='Bleed'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20251024171433') RETURNING "version" /*application='Bleed'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Bleed'*/[0m
+Migrating to CreateParties (20251024171518)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Bleed'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "parties" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Bleed'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20251024171518') RETURNING "version" /*application='Bleed'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Bleed'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Bleed'*/[0m
+  [1m[36mParty Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "parties" /*application='Bleed'*/[0m
