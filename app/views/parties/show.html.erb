@@ -1,1 +1,16 @@
-<h1> placeholder party show page </h1>
+
+<h1> party code: <%= @party.code %> </h1>
+
+<% if @party.characters.empty? %>
+    <div>
+        <p> this pary has no characters in it </p>
+    </div>
+<% else %>
+    <div class="character-roster">
+        <ul>
+            <% @party.characters.each do |char| %>
+                <li> <%= char.name %> </li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>

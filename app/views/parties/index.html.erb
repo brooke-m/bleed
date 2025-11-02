@@ -1,1 +1,15 @@
-<h1>hehe hi</h1>
+<h1>parties</h1>
+
+<div id="party-list">
+  <% @parties.each do |party| %>
+    <div>
+      <%= party.code %>
+      <br/>
+      <div class="pc-list">
+        <% party.characters.each do |char| %>
+            <%= char.name %> · 
+        <% end %>
+        </div>
+    </div>
+  <% end %>
+</div>

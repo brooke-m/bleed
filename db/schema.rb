@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_10_31_140312) do
+ActiveRecord::Schema[8.1].define(version: 2025_11_02_171209) do
   create_table "characters", force: :cascade do |t|
     t.integer "abjuration", default: 0
     t.integer "conjuration", default: 0
@@ -31,6 +31,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_10_31_140312) do
   create_table "parties", force: :cascade do |t|
     t.string "code"
     t.datetime "created_at", null: false
+    t.string "name"
     t.datetime "updated_at", null: false
     t.index ["code"], name: "index_parties_on_code", unique: true
   end
