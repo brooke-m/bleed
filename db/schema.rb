@@ -10,20 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_10_24_171518) do
+ActiveRecord::Schema[8.1].define(version: 2025_10_31_140312) do
   create_table "characters", force: :cascade do |t|
-    t.integer "abjuration"
-    t.integer "conjuration"
+    t.integer "abjuration", default: 0
+    t.integer "conjuration", default: 0
     t.datetime "created_at", null: false
-    t.integer "divination"
-    t.integer "enchantment"
-    t.integer "evocation"
-    t.integer "illusion"
+    t.integer "divination", default: 0
+    t.integer "enchantment", default: 0
+    t.integer "evocation", default: 0
+    t.integer "illusion", default: 0
     t.string "name"
-    t.integer "necromancy"
+    t.integer "necromancy", default: 0
     t.integer "party_id"
-    t.integer "total_casts"
-    t.integer "transmutation"
+    t.integer "total_casts", default: 0
+    t.integer "transmutation", default: 0
     t.datetime "updated_at", null: false
     t.index ["party_id"], name: "index_characters_on_party_id"
   end
@@ -32,5 +32,6 @@ ActiveRecord::Schema[8.1].define(version: 2025_10_24_171518) do
     t.string "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_parties_on_code", unique: true
   end
 end

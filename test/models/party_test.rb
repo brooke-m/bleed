@@ -18,4 +18,13 @@ class PartyTest < ActiveSupport::TestCase
     assert party.valid? == false
     assert party.save == false
   end
+
+    test "no duplicate party codes" do
+    party = Party.new(code: 'original')
+    assert party.valid? == true
+    party.save
+
+    new_party = Party.new(code: 'original')
+    assert new_party.save == false
+  end
 end

@@ -7,3 +7,10 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+full_party = Party.find_or_create_by!(code: 'FULL')
+Party.find_or_create_by!(code: 'EMPTY')
+
+["wizard", "cleric", "rogue", "fighter"].each do |name|
+  Character.find_or_create_by(name: name, party_id: full_party.id)
+end
