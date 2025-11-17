@@ -4,3 +4,7 @@
 
 storage/development.sqlite3-shm
 storage/development.sqlite3-wal
+*.sqlite3
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
