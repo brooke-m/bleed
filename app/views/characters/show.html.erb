@@ -1,48 +1,7 @@
-<h1> <%= @character.name %> </h1>
+<div>
+        <h1> <%= @character.name %> </h1>
 
-<p>party code <%= @party.code %> </p>
+    <p>party code <%= @party.code %> </p>
 
-<div id="cast-table">
-    <table>
-        <thead>
-            <tr>
-                <th> school </th>
-                <th> casts </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td> abjuration </td>
-                <td> <%= @character.abjuration %> </td>
-            </tr>
-            <tr>
-                <td> conjuration </td>
-                <td> <%= @character.conjuration %> </td>
-            </tr>
-            <tr>
-                <td> divination </td>
-                <td> <%= @character.divination %> </td>
-            </tr>
-            <tr>
-                <td> enchantment </td>
-                <td> <%= @character.enchantment %> </td>
-            </tr>
-            <tr>
-                <td> evocation </td>
-                <td> <%= @character.evocation %> </td>
-            </tr>
-            <tr>
-                <td> illusion </td>
-                <td> <%= @character.illusion %> </td>
-            </tr>
-            <tr>
-                <td> necromancy </td>
-                <td> <%= @character.necromancy %> </td>
-            </tr>
-            <tr>
-                <td> transumtation </td>
-                <td> <%= @character.transmutation %> </td>
-            </tr>
-        </tbody>
-    </table>
-</h2>
+    <%= render partial: "calculator", locals: {character: @character} %>
+</div>
