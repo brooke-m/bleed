@@ -1,1 +1,11 @@
-<h1> placeholder character index page </h1>
+<div>
+    <h1 class="font-bold text-3xl"> characters by name </h1>
+
+    <div id="character-list">
+        <ul class="space-y-2 pt-4">
+            <% @characters.each do |char| %>
+                <li class="hover:bg-cyan-200 hover:text-gray-800"> > <%= link_to char.name, character_path(char)%> </li>
+            <% end %>
+        </ul>
+    </div>
+</div>
