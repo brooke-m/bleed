@@ -18,3 +18,9 @@ group :development, :test do
 end
 
 gem "tailwindcss-rails", "~> 4.4"
+
+gem 'stimulus-rails'
+
+gem 'turbo-rails'
+
+gem "importmap-rails", "~> 2.2"
